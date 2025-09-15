@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carta Especial 💌</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+    }
+
+    .carta {
+      width: 300px;
+      height: 400px;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.8s;
+      transform-style: preserve-3d;
+      cursor: pointer;
+    }
+
+    .frente, .verso {
+      position: absolute;
+      width: 300px;
+      height: 400px;
+      backface-visibility: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      border-radius: 15px;
+      padding: 20px;
+    }
+
+    .frente {
+      background: #fff0f5;
+    }
+
+    .verso {
+      background: #ffe4e1;
+      transform: rotateY(180deg);
+    }
+
+    .carta.virada {
+      transform: rotateY(180deg);
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background: #ff6b81;
+      color: white;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #e63950;
+    }
+  </style>
+</head>
+<body>
+  <div class="carta" id="carta">
+    <div class="frente">
+      <h2>💌 Uma carta pra você</h2>
+      <button onclick="virarCarta()">Clique aqui</button>
+    </div>
+    <div class="verso">
+      <h2>Obrigado por ser a minha pessoa favorita! ❤️</h2>
+    </div>
+  </div>
+
+  <script>
+    function virarCarta() {
+      document.getElementById("carta").classList.add("virada");
+    }
+  </script>
+</body>
+</html>
